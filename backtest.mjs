@@ -12,7 +12,7 @@ const iso = (ms) => new Date(ms).toISOString();
 const ymd = (ms) => iso(ms).slice(0, 10).replace(/-/g, '');
 const num = (x) => { const n = typeof x === 'string' ? parseFloat(x) : x; return Number.isFinite(n) ? n : null; };
 const r3 = (x) => Math.round(x * 1000) / 1000;
-const stats = { requests: {}, errors: {}, t0: Date.now() };
+const stats = { requests: {}, errors: {}, t0: Date.now(), espn: { summaries: 0, sansReponse: 0, sansPickcenter: 0, fournisseurs: {} } };
 
 function limiter(n, gapMs) {
   let active = 0, last = 0; const q = [];
@@ -64,12 +64,16 @@ async function espnEvents(sport, lg) {
   await Promise.all([...found.values()].map(async (ev) => {
     const sm = await getJSON('espn', 'https://site.api.espn.com/apis/site/v2/sports/' + sport + '/' + lg + '/summary?event=' + ev.id);
     const pc = (sm && sm.pickcenter) || [];
-    const dk = pc.find((p) => p.provider && /draftkings/i.test(p.provider.name || '')) || null;
+    stats.espn.summaries++;
+    if (!sm) stats.espn.sansReponse++; else if (!pc.length) stats.espn.sansPickcenter++;
+    pc.forEach((p) => { const n = (p.provider && (p.provider.name || p.provider.displayName)) || '?'; stats.espn.fournisseurs[n] = (stats.espn.fournisseurs[n] || 0) + 1; });
+    // DraftKings de préférence ; sinon le premier bookmaker proposé (cote de clôture, même usage)
+    const dk = pc.find((p) => p.provider && /draftkings/i.test(p.provider.name || '')) || pc.find((p) => p.moneyline) || null;
     const c = ev.competitions[0];
     out.push({ id: String(ev.id), date: ev.date, status: { type: ev.status.type }, competitions: [{
       competitors: c.competitors.map((x) => ({ homeAway: x.homeAway, score: x.score,
         team: { id: x.team.id, displayName: x.team.displayName, shortDisplayName: x.team.shortDisplayName, abbreviation: x.team.abbreviation } })),
-      odds: dk ? [{ provider: { name: 'DraftKings' }, moneyline: dk.moneyline, pointSpread: dk.pointSpread, total: dk.total }] : [] }] });
+      odds: dk ? [{ provider: { name: (dk.provider && dk.provider.name) || '?' }, moneyline: dk.moneyline, pointSpread: dk.pointSpread, total: dk.total }] : [] }] });
   }));
   return out;
 }
@@ -82,12 +86,13 @@ async function pmGames(sports, code) {
   if (!s) return [];
   const sid = String(s.series).split(',')[0];
   const evs = [];
-  for (let off = 0; off < 3000; off += 500) {
-    const d = await getJSON('gamma', 'https://gamma-api.polymarket.com/events?series_id=' + sid + '&closed=true&limit=500&offset=' + off +
+  // pages de 100 (maximum servi par l'API)
+  for (let off = 0; off < 6000; off += 100) {
+    const d = await getJSON('gamma', 'https://gamma-api.polymarket.com/events?series_id=' + sid + '&closed=true&limit=100&offset=' + off +
       '&end_date_min=' + encodeURIComponent(iso(START - 864e5)) + '&end_date_max=' + encodeURIComponent(iso(END + 3 * 864e5)));
     if (!d || !d.length) break;
     evs.push(...d);
-    if (d.length < 500) break;
+    if (d.length < 100) break;
   }
   const games = new Map();
   for (const ev of evs) {
@@ -175,6 +180,6 @@ for (const [sport, lg, pmCode, kPrefix] of LEAGUES.filter((x) => !ONLY.length ||
   console.log(lg, JSON.stringify(summary.leagues[lg]));
 }
 summary.generatedAt = iso(Date.now());
-summary.requests = stats.requests; summary.errors = stats.errors; summary.seconds = Math.round((Date.now() - stats.t0) / 1000);
+summary.requests = stats.requests; summary.errors = stats.errors; summary.espn = stats.espn; summary.seconds = Math.round((Date.now() - stats.t0) / 1000);
 fs.writeFileSync('data/backtest/summary.json', JSON.stringify(summary, null, 1));
 console.log('requêtes :', JSON.stringify(stats.requests), '| erreurs :', JSON.stringify(stats.errors));
