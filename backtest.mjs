@@ -104,8 +104,10 @@ async function pmGames(sports, code) {
     const key = (/^(.*?-\d{4}-\d{2}-\d{2})/.exec(ev.slug || '') || [])[1] || ev.slug;
     if (!games.has(key)) games.set(key, { id: key, start: iso(start), title: ev.title || '', teams: (ev.teams || []).map((t) => ({ name: t.name, alias: t.alias || '', ordering: t.ordering || '' })), markets: [] });
     const g = games.get(key);
-    const top = (type) => ms.filter((m) => m.sportsMarketType === type).sort((a, b) => (num(b.volumeNum) || 0) - (num(a.volumeNum) || 0)).slice(0, 2);
-    for (const m of [...ml, ...top('spreads'), ...top('totals'), ...top('both_teams_to_score')]) {
+    // toutes les lignes (8 au plus par type), sans tri par volume : le volume se fait surtout pendant le match,
+    // sur les lignes proches du score final, ce qui fausserait la mesure
+    const all = (type) => ms.filter((m) => m.sportsMarketType === type).slice(0, 8);
+    for (const m of [...ml, ...all('spreads'), ...all('totals'), ...all('both_teams_to_score')]) {
       let tok = [], oc = [];
       try { tok = JSON.parse(m.clobTokenIds || '[]'); oc = JSON.parse(m.outcomes || '[]'); } catch { continue; }
       if (tok.length !== 2 || oc.length !== 2) continue;
@@ -147,23 +149,24 @@ async function kGames(prefix) {
       events.get(suffix).markets.push({ type, ticker: m.ticker, sub: m.yes_sub_title || '', title: m.title || '', strike: num(m.floor_strike), vol: Math.round(num(m.volume_fp) || 0), result: m.result || '', series: [] });
     }
   }
-  // garde victoire/nul + les deux handicaps et deux totaux les plus échangés, puis prix horaires de 6 h à 36 h UTC le jour du match
+  // toutes les lignes (pas de tri par volume, voir Polymarket), prix horaires de 6 h à 36 h UTC le jour du match
   await Promise.all([...events.values()].map(async (ev) => {
-    const top = (type) => ev.markets.filter((x) => x.type === type).sort((a, b) => b.vol - a.vol).slice(0, 2);
-    ev.markets = [...ev.markets.filter((x) => x.type === 'GAME'), ...top('SPREAD'), ...top('TOTAL')];
     if (!ev.markets.length) return;
     const day = Math.floor(Date.parse(ev.date + 'T00:00:00Z') / 1000);
-    const d = await getJSON('kalshi', 'https://api.elections.kalshi.com/trade-api/v2/markets/candlesticks?market_tickers=' + ev.markets.map((x) => x.ticker).join(',') +
-      '&start_ts=' + (day + 6 * 3600) + '&end_ts=' + (day + 36 * 3600) + '&period_interval=60');
-    const list = (d && d.markets) || [];
-    ev.markets.forEach((x, i) => {
-      const mk = list.find((y) => (y.market_ticker || y.ticker) === x.ticker) || list[i];
+    for (let i = 0; i < ev.markets.length; i += 40) {
+      const chunk = ev.markets.slice(i, i + 40);
+      const d = await getJSON('kalshi', 'https://api.elections.kalshi.com/trade-api/v2/markets/candlesticks?market_tickers=' + chunk.map((x) => x.ticker).join(',') +
+        '&start_ts=' + (day + 6 * 3600) + '&end_ts=' + (day + 36 * 3600) + '&period_interval=60');
+      const list = (d && d.markets) || [];
+      chunk.forEach((x, j) => {
+      const mk = list.find((y) => (y.market_ticker || y.ticker) === x.ticker) || list[j];
       x.series = ((mk && mk.candlesticks) || []).map((c) => {
         const bid = num(c.yes_bid && c.yes_bid.close_dollars), ask = num(c.yes_ask && c.yes_ask.close_dollars), last = num(c.price && c.price.close_dollars);
         const p = bid !== null && ask !== null && ask > 0 && ask - bid <= 0.1 ? (bid + ask) / 2 : (last !== null && last > 0 && last < 1 ? last : null);
         return [c.end_period_ts, p === null ? null : r3(p)];
       }).filter((y) => y[1] !== null);
-    });
+      });
+    }
   }));
   return [...events.values()];
 }
