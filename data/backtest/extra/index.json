@@ -1,34 +1,51 @@
 {
- "generatedAt": "2026-11-21T15:04:22.395Z",
- "from": "2026-10-12T15:04:22.395Z",
+ "generatedAt": "2026-11-21T15:07:55.180Z",
+ "from": "2026-10-12T15:07:55.180Z",
  "fd": {
   "eng.1": [
+   "fd-2425-E0.csv",
+   "fd-2526-E0.csv",
    "fd-2627-E0.csv"
   ],
   "esp.1": [
+   "fd-2425-SP1.csv",
+   "fd-2526-SP1.csv",
    "fd-2627-SP1.csv"
   ],
   "ita.1": [
+   "fd-2425-I1.csv",
+   "fd-2526-I1.csv",
    "fd-2627-I1.csv"
   ],
   "ger.1": [
+   "fd-2425-D1.csv",
+   "fd-2526-D1.csv",
    "fd-2627-D1.csv"
   ],
   "fra.1": [
+   "fd-2425-F1.csv",
+   "fd-2526-F1.csv",
    "fd-2627-F1.csv"
   ],
   "eng.2": [
+   "fd-2425-E1.csv",
+   "fd-2526-E1.csv",
    "fd-2627-E1.csv"
   ],
   "fra.2": [
+   "fd-2425-F2.csv",
+   "fd-2526-F2.csv",
    "fd-2627-F2.csv"
   ],
   "por.1": [
+   "fd-2425-P1.csv",
+   "fd-2526-P1.csv",
    "fd-2627-P1.csv"
   ],
   "ned.1": [
+   "fd-2425-N1.csv",
+   "fd-2526-N1.csv",
    "fd-2627-N1.csv"
   ]
- },
- "clubelo": []
+ }
 }
