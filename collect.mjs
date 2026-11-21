@@ -247,7 +247,7 @@ function updateHistory(prev, result, now) {
   const T = Math.round(now / 60000);
   const ok = prev && prev.v === 1 && Array.isArray(prev.t);
   const t = ok ? prev.t.slice() : [];
-  const replace = t.length > 0 && T - t[t.length - 1] < 25; // relance rapprochée : on remplace le dernier relevé
+  const replace = t.length > 0 && Math.floor(T / 60) === Math.floor(t[t.length - 1] / 60); // même heure : on remplace le dernier relevé
   if (replace) t[t.length - 1] = T; else t.push(T);
   const n = t.length;
   const out = { v: 1, generatedAt: new Date(now).toISOString(), t, polymarket: {}, kalshi: {} };
