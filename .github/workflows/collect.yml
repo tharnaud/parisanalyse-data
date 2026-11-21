@@ -2,7 +2,7 @@ name: Collecte des cotes
 
 on:
   schedule:
-    - cron: '17 * * * *'
+    - cron: '7,27,47 * * * *' # trois essais par heure : GitHub saute souvent des lancements
   workflow_dispatch:
 
 permissions:
