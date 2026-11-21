@@ -1,52 +1,5 @@
 [
  {
-  "slug": "epl-mac-ful-2026-11-21",
-  "types": [
-   "moneyline"
-  ],
-  "ml": [
-   [
-    "Will Manchester City FC win on 2026-11-21?",
-    "Manchester City FC",
-    "[\"Yes\", \"No\"]",
-    "[\"0.705\", \"0.295\"]"
-   ],
-   [
-    "Will Manchester City FC vs. Fulham FC end in a draw?",
-    "Draw (Manchester City FC vs. Fulham FC)",
-    "[\"Yes\", \"No\"]",
-    "[\"0.175\", \"0.825\"]"
-   ],
-   [
-    "Will Fulham FC win on 2026-11-21?",
-    "Fulham FC",
-    "[\"Yes\", \"No\"]",
-    "[\"0.115\", \"0.885\"]"
-   ]
-  ]
- },
- {
-  "slug": "epl-mac-ful-2026-11-21-halftime-result",
-  "types": [
-   "soccer_halftime_result"
-  ],
-  "ml": []
- },
- {
-  "slug": "epl-mac-ful-2026-11-21-exact-score",
-  "types": [
-   "soccer_exact_score"
-  ],
-  "ml": []
- },
- {
-  "slug": "epl-mac-ful-2026-11-21-first-to-score",
-  "types": [
-   "soccer_first_to_score"
-  ],
-  "ml": []
- },
- {
   "slug": "epl-ast-sun-2026-11-21",
   "types": [
    "moneyline"
@@ -56,13 +9,13 @@
     "Will Aston Villa FC win on 2026-11-21?",
     "Aston Villa FC",
     "[\"Yes\", \"No\"]",
-    "[\"0.555\", \"0.445\"]"
+    "[\"0.545\", \"0.455\"]"
    ],
    [
     "Will Aston Villa FC vs. Sunderland AFC end in a draw?",
     "Draw (Aston Villa FC vs. Sunderland AFC)",
     "[\"Yes\", \"No\"]",
-    "[\"0.245\", \"0.755\"]"
+    "[\"0.255\", \"0.745\"]"
    ],
    [
     "Will Sunderland AFC win on 2026-11-21?",
@@ -74,6 +27,53 @@
  },
  {
   "slug": "epl-ast-sun-2026-11-21-halftime-result",
+  "types": [
+   "soccer_halftime_result"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-ast-sun-2026-11-21-exact-score",
+  "types": [
+   "soccer_exact_score"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-ast-sun-2026-11-21-first-to-score",
+  "types": [
+   "soccer_first_to_score"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-cov-cry-2026-11-21",
+  "types": [
+   "moneyline"
+  ],
+  "ml": [
+   [
+    "Will Coventry City FC win on 2026-11-21?",
+    "Coventry City FC",
+    "[\"Yes\", \"No\"]",
+    "[\"0.375\", \"0.625\"]"
+   ],
+   [
+    "Will Coventry City FC vs. Crystal Palace FC end in a draw?",
+    "Draw (Coventry City FC vs. Crystal Palace FC)",
+    "[\"Yes\", \"No\"]",
+    "[\"0.285\", \"0.715\"]"
+   ],
+   [
+    "Will Crystal Palace FC win on 2026-11-21?",
+    "Crystal Palace FC",
+    "[\"Yes\", \"No\"]",
+    "[\"0.345\", \"0.655\"]"
+   ]
+  ]
+ },
+ {
+  "slug": "epl-cov-cry-2026-11-21-halftime-result",
   "types": [
    "soccer_halftime_result"
   ],
