@@ -1,0 +1,587 @@
+{
+ "at": "2026-11-21T12:27:47.745Z",
+ "probes": {
+  "pm_sports": {
+   "ok": true,
+   "url": "https://gamma-api.polymarket.com/sports"
+  },
+  "pm_closed_epl": {
+   "ok": true,
+   "url": "https://gamma-api.polymarket.com/events?series_id=10188&closed=true&limit=100&end_date_min=2026-11-11T12%3A27%3A47.745Z&end_date_max=2026-11-20T12%3A27%3A47.745Z"
+  },
+  "pm_closed_nba": {
+   "ok": true,
+   "url": "https://gamma-api.polymarket.com/events?series_id=10345&closed=true&limit=100&end_date_min=2026-11-11T12%3A27%3A47.745Z&end_date_max=2026-11-20T12%3A27%3A47.745Z",
+   "n": 100,
+   "nWithMoneyline": 63,
+   "sample": {
+    "id": "1284270",
+    "ticker": "nba-was-ind-2026-11-11",
+    "slug": "nba-was-ind-2026-11-11",
+    "title": "Wizards vs. Pacers",
+    "startDate": "2026-10-30T17:59:56Z",
+    "endDate": "2026-11-12T00:00:00Z",
+    "active": true,
+    "closed": true,
+    "markets": [
+     {
+      "id": "6428657",
+      "question": "Wizards vs. Pacers",
+      "slug": "nba-was-ind-2026-11-11",
+      "endDate": "2026-11-12T00:00:00Z",
+      "startDate": "2026-10-30T17:59:56Z",
+      "outcomes": "[\"Wizards\", \"Pacers\"]",
+      "outcomePrices": "[\"0\", \"1\"]",
+      "active": true,
+      "closed": true,
+      "closedTime": "2026-11-12 02:37:04.951023+00",
+      "umaResolutionStatus": "resolved",
+      "volumeNum": 990889.5609570002,
+      "gameStartTime": "2026-11-12 00:00:00+00",
+      "clobTokenIds": "[\"24487170024008903029016236544026028717300511867664337899898548032773662643768\", \"38494987955746577960731099956835194106020821811229388861661027688961004683090\"]",
+      "spread": 0.001,
+      "sportsMarketType": "moneyline"
+     },
+     {
+      "id": "6944575",
+      "question": "Spread: Pacers (-4.5)",
+      "slug": "nba-was-ind-2026-11-11-spread-home-4pt5",
+      "endDate": "2026-11-12T00:00:00Z",
+      "startDate": "2026-11-10T21:03:19Z",
+      "outcomes": "[\"Pacers\", \"Wizards\"]",
+      "outcomePrices": "[\"1\", \"0\"]",
+      "active": true,
+      "closed": true,
+      "closedTime": "2026-11-12 02:37:04.942749+00",
+      "groupItemTitle": "Spread -4.5",
+      "umaResolutionStatus": "resolved",
+      "volumeNum": 26591.167912,
+      "gameStartTime": "2026-11-12 00:00:00+00",
+      "clobTokenIds": "[\"69992601192537675753684781934910199304533272825024433764328813070582501040430\", \"29845125407550949256799478213955034583681110483620960270251586277894241838659\"]",
+      "spread": 0.001,
+      "sportsMarketType": "spreads",
+      "line": -4.5
+     },
+     {
+      "id": "6944582",
+      "question": "Wizards vs. Pacers: O/U 230.5",
+      "slug": "nba-was-ind-2026-11-11-total-230pt5",
+      "endDate": "2026-11-12T00:00:00Z",
+      "startDate": "2026-11-10T21:03:16Z",
+      "outcomes": "[\"Over\", \"Under\"]",
+      "outcomePrices": "[\"0\", \"1\"]",
+      "active": true,
+      "closed": true,
+      "closedTime": "2026-11-12 02:37:11.986074+00",
+      "groupItemTitle": "O/U 230.5",
+      "umaResolutionStatus": "resolved",
+      "volumeNum": 4213.6989459999995,
+      "gameStartTime": "2026-11-12 00:00:00+00",
+      "clobTokenIds": "[\"41273245405942174014601020984981063988870244410842899669804508219689778519853\", \"59415980555719177190724856854766361513056361416572107215417995992157524121182\"]",
+      "spread": 0.001,
+      "sportsMarketType": "totals",
+      "line": 230.5
+     },
+     {
+      "id": "6944596",
+      "question": "Spread: Pacers (-3.5)",
+      "slug": "nba-was-ind-2026-11-11-spread-home-3pt5",
+      "endDate": "2026-11-12T00:00:00Z",
+      "startDate": "2026-11-10T21:03:16Z",
+      "outcomes": "[\"Pacers\", \"Wizards\"]",
+      "outcomePrices": "[\"1\", \"0\"]",
+      "active": true,
+      "closed": true,
+      "closedTime": "2026-11-12 02:37:06.163914+00",
+      "groupItemTitle": "Spread -3.5",
+      "umaResolutionStatus": "resolved",
+      "volumeNum": 120075.557204,
+      "gameStartTime": "2026-11-12 00:00:00+00",
+      "clobTokenIds": "[\"75693754841964507763873483976222615575432949586133446617192906022591877194234\", \"86651849742051634883297015347869531498122903352388482894652385224629145935944\"]",
+      "spread": 0.001,
+      "sportsMarketType": "spreads",
+      "line": -3.5
+     }
+    ],
+    "closedTime": "2026-11-12T03:19:19Z",
+    "startTime": "2026-11-12T00:00:00Z",
+    "score": "101-114",
+    "teams": [
+     {
+      "id": 100495,
+      "name": "Wizards",
+      "alias": "Wizards",
+      "ordering": "away"
+     },
+     {
+      "id": 100498,
+      "name": "Pacers",
+      "alias": "Pacers",
+      "ordering": "home"
+     }
+    ]
+   },
+   "firstMoneyline": {
+    "id": "6428657",
+    "question": "Wizards vs. Pacers",
+    "slug": "nba-was-ind-2026-11-11",
+    "endDate": "2026-11-12T00:00:00Z",
+    "startDate": "2026-10-30T17:59:56Z",
+    "outcomes": "[\"Wizards\", \"Pacers\"]",
+    "outcomePrices": "[\"0\", \"1\"]",
+    "active": true,
+    "closed": true,
+    "closedTime": "2026-11-12 02:37:04.951023+00",
+    "umaResolutionStatus": "resolved",
+    "volumeNum": 990889.5609570002,
+    "gameStartTime": "2026-11-12 00:00:00+00",
+    "clobTokenIds": "[\"24487170024008903029016236544026028717300511867664337899898548032773662643768\", \"38494987955746577960731099956835194106020821811229388861661027688961004683090\"]",
+    "spread": 0.001,
+    "sportsMarketType": "moneyline"
+   },
+   "start": "2026-11-12T00:00:00.000Z"
+  },
+  "pm_hist_nba": {
+   "ok": true,
+   "url": "https://clob.polymarket.com/prices-history?market=24487170024008903029016236544026028717300511867664337899898548032773662643768&startTs=1794398400&endTs=1794456000&fidelity=60",
+   "start": "2026-11-12T00:00:00.000Z",
+   "sample": {
+    "history": [
+     {
+      "t": 1794398423,
+      "p": 0.415
+     },
+     {
+      "t": 1794402023,
+      "p": 0.425
+     },
+     {
+      "t": 1794405618,
+      "p": 0.425
+     },
+     {
+      "t": 1794409220,
+      "p": 0.425
+     }
+    ]
+   },
+   "n": 15
+  },
+  "pm_hist2_nba": {
+   "ok": true,
+   "url": "https://clob.polymarket.com/prices-history?market=24487170024008903029016236544026028717300511867664337899898548032773662643768&interval=1w&fidelity=60",
+   "n": 0
+  },
+  "k_settled_KXEPLGAME": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXEPLGAME&status=settled&limit=50&min_close_ts=1794400067",
+   "n": 0,
+   "cursor": false,
+   "sample": []
+  },
+  "k_settled_KXNBAGAME": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXNBAGAME&status=settled&limit=50&min_close_ts=1794400067",
+   "n": 50,
+   "cursor": true,
+   "sample": [
+    {
+     "close_time": "2026-11-21T05:39:32Z",
+     "event_ticker": "KXNBAGAME-26NOV20HOUDEN",
+     "expected_expiration_time": "2026-11-21T06:00:00Z",
+     "last_price_dollars": "0.0100",
+     "latest_expiration_time": "2026-11-23T03:00:00Z",
+     "no_sub_title": "Houston",
+     "occurrence_datetime": "2026-11-21T06:00:00Z",
+     "previous_price_dollars": "0.4900",
+     "result": "no",
+     "settlement_value_dollars": "0.0000",
+     "status": "finalized",
+     "ticker": "KXNBAGAME-26NOV20HOUDEN-HOU",
+     "title": "Houston wins",
+     "volume_fp": "8028044.64",
+     "yes_sub_title": "Houston"
+    },
+    {
+     "close_time": "2026-11-21T05:39:32Z",
+     "event_ticker": "KXNBAGAME-26NOV20HOUDEN",
+     "expected_expiration_time": "2026-11-21T06:00:00Z",
+     "last_price_dollars": "0.9900",
+     "latest_expiration_time": "2026-11-23T03:00:00Z",
+     "no_sub_title": "Denver",
+     "occurrence_datetime": "2026-11-21T06:00:00Z",
+     "previous_price_dollars": "0.5300",
+     "result": "yes",
+     "settlement_value_dollars": "1.0000",
+     "status": "finalized",
+     "ticker": "KXNBAGAME-26NOV20HOUDEN-DEN",
+     "title": "Denver wins",
+     "volume_fp": "7697731.48",
+     "yes_sub_title": "Denver"
+    }
+   ]
+  },
+  "k_candles_KXNBAGAME": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/series/KXNBAGAME/markets/KXNBAGAME-26NOV20HOUDEN-HOU/candlesticks?start_ts=1795176000&end_ts=1795251600&period_interval=60",
+   "occ": "2026-11-21T06:00:00.000Z",
+   "n": 19,
+   "sample": [
+    {
+     "end_period_ts": 1795176000,
+     "open_interest_fp": "55838.98",
+     "price": {
+      "close_dollars": "0.4900",
+      "high_dollars": "0.4900",
+      "low_dollars": "0.4700",
+      "mean_dollars": "0.4858",
+      "open_dollars": "0.4800",
+      "previous_dollars": "0.4800"
+     },
+     "volume_fp": "4275.72",
+     "yes_ask": {
+      "close_dollars": "0.4900",
+      "high_dollars": "0.4900",
+      "low_dollars": "0.4800",
+      "open_dollars": "0.4800"
+     },
+     "yes_bid": {
+      "close_dollars": "0.4700",
+      "high_dollars": "0.4700",
+      "low_dollars": "0.4700",
+      "open_dollars": "0.4700"
+     }
+    },
+    {
+     "end_period_ts": 1795179600,
+     "open_interest_fp": "58298.50",
+     "price": {
+      "close_dollars": "0.4900",
+      "high_dollars": "0.4900",
+      "low_dollars": "0.4700",
+      "mean_dollars": "0.4879",
+      "open_dollars": "0.4900",
+      "previous_dollars": "0.4900"
+     },
+     "volume_fp": "2483.44",
+     "yes_ask": {
+      "close_dollars": "0.4900",
+      "high_dollars": "0.4900",
+      "low_dollars": "0.4800",
+      "open_dollars": "0.4900"
+     },
+     "yes_bid": {
+      "close_dollars": "0.4700",
+      "high_dollars": "0.4700",
+      "low_dollars": "0.4700",
+      "open_dollars": "0.4700"
+     }
+    }
+   ],
+   "last": [
+    {
+     "end_period_ts": 1795237200,
+     "open_interest_fp": "2569942.25",
+     "price": {
+      "close_dollars": "0.6000",
+      "high_dollars": "0.6300",
+      "low_dollars": "0.3700",
+      "mean_dollars": "0.4853",
+      "open_dollars": "0.5400",
+      "previous_dollars": "0.5400"
+     },
+     "volume_fp": "1790662.21",
+     "yes_ask": {
+      "close_dollars": "0.6000",
+      "high_dollars": "0.6300",
+      "low_dollars": "0.3800",
+      "open_dollars": "0.5400"
+     },
+     "yes_bid": {
+      "close_dollars": "0.5900",
+      "high_dollars": "0.6100",
+      "low_dollars": "0.3700",
+      "open_dollars": "0.5300"
+     }
+    },
+    {
+     "end_period_ts": 1795240800,
+     "open_interest_fp": "4722283.26",
+     "price": {
+      "close_dollars": "0.0100",
+      "high_dollars": "0.7500",
+      "low_dollars": "0.0100",
+      "mean_dollars": "0.2405",
+      "open_dollars": "0.6000",
+      "previous_dollars": "0.6000"
+     },
+     "volume_fp": "3981386.16",
+     "yes_ask": {
+      "close_dollars": "1.0000",
+      "high_dollars": "1.0000",
+      "low_dollars": "0.0100",
+      "open_dollars": "0.6000"
+     },
+     "yes_bid": {
+      "close_dollars": "0.0000",
+      "high_dollars": "0.7300",
+      "low_dollars": "0.0000",
+      "open_dollars": "0.5900"
+     }
+    }
+   ]
+  },
+  "k_batch_KXNBAGAME": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/markets/candlesticks?market_tickers=KXNBAGAME-26NOV20HOUDEN-HOU&start_ts=1795176000&end_ts=1795251600&period_interval=60",
+   "keys": [
+    "markets"
+   ],
+   "sample": "{\"markets\":[{\"candlesticks\":[{\"end_period_ts\":1795176000,\"open_interest_fp\":\"55838.98\",\"price\":{\"close_dollars\":\"0.4900\",\"high_dollars\":\"0.4900\",\"low_dollars\":\"0.4700\",\"mean_dollars\":\"0.4858\",\"open_dollars\":\"0.4800\",\"previous_dollars\":\"0.4800\"},\"volume_fp\":\"4275.72\",\"yes_ask\":{\"close_dollars\":\"0.4900\",\"high_dollars\":\"0.4900\",\"low_dollars\":\"0.4800\",\"open_dollars\":\"0.4800\"},\"yes_bid\":{\"close_dollars\":\"0.4700\",\"high_dollars\":\"0.4700\",\"low_dollars\":\"0.4700\",\"open_dollars\":\"0.4700\"}},{\"end_period_ts\":1795179600,\"open_interest_fp\":\"58298.50\",\"price\":{\"close_dollars\":\"0.4900\",\"high_dollars\":\"0.4900\","
+  },
+  "k_settled_KXEPLTOTAL": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXEPLTOTAL&status=settled&limit=50&min_close_ts=1794400067",
+   "n": 0,
+   "cursor": false,
+   "sample": []
+  },
+  "k_settled_KXEPLSPREAD": {
+   "ok": true,
+   "url": "https://api.elections.kalshi.com/trade-api/v2/markets?series_ticker=KXEPLSPREAD&status=settled&limit=50&min_close_ts=1794400067",
+   "n": 0,
+   "cursor": false,
+   "sample": []
+  },
+  "espn_soccer/eng.1": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard?dates=20261115"
+  },
+  "espn_soccer/esp.1": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard?dates=20261115"
+  },
+  "espn_basketball/nba": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard?dates=20261120",
+   "date": "20261120",
+   "n": 9,
+   "completed": true,
+   "statusName": "STATUS_FINAL",
+   "scores": [
+    "home:Atlanta Hawks=111",
+    "away:Charlotte Hornets=97"
+   ],
+   "oddsPresent": false
+  },
+  "espn_summary_basketball/nba": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/summary?event=401909305",
+   "pickcenter": [
+    {
+     "provider": {
+      "id": "100",
+      "name": "DraftKings"
+     },
+     "details": "ATL -7.5",
+     "overUnder": 219.5,
+     "spread": -7.5,
+     "moneyline": {
+      "displayName": "Moneyline",
+      "shortDisplayName": "ML",
+      "home": {
+       "close": {
+        "odds": "-264"
+       },
+       "open": {
+        "odds": "-212"
+       }
+      },
+      "away": {
+       "close": {
+        "odds": "+217"
+       },
+       "open": {
+        "odds": "+177"
+       }
+      }
+     },
+     "total": {
+      "displayName": "Total",
+      "shortDisplayName": "Total",
+      "over": {
+       "close": {
+        "line": "o219.5",
+        "odds": "-105"
+       },
+       "open": {
+        "line": "o218.5",
+        "odds": "-106"
+       }
+      },
+      "under": {
+       "close": {
+        "line": "u219.5",
+        "odds": "-115"
+       },
+       "open": {
+        "line": "u218.5",
+        "odds": "-114"
+       }
+      }
+     },
+     "header": {}
+    }
+   ],
+   "odds": []
+  },
+  "espn_hockey/nhl": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/scoreboard?dates=20261119",
+   "date": "20261119",
+   "n": 12,
+   "completed": true,
+   "statusName": "STATUS_FINAL",
+   "scores": [
+    "home:Toronto Maple Leafs=3",
+    "away:Los Angeles Kings=4"
+   ],
+   "oddsPresent": false
+  },
+  "espn_summary_hockey/nhl": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/hockey/nhl/summary?event=401892742",
+   "pickcenter": [
+    {
+     "provider": {
+      "id": "100",
+      "name": "DraftKings"
+     },
+     "details": "TOR -130",
+     "overUnder": 5.5,
+     "spread": -1.5,
+     "moneyline": {
+      "displayName": "Moneyline",
+      "shortDisplayName": "ML",
+      "home": {
+       "close": {
+        "odds": "-130"
+       },
+       "open": {
+        "odds": "-115"
+       }
+      },
+      "away": {
+       "close": {
+        "odds": "+110"
+       },
+       "open": {
+        "odds": "-105"
+       }
+      }
+     },
+     "total": {
+      "displayName": "Total",
+      "shortDisplayName": "Total",
+      "over": {
+       "close": {
+        "line": "o5.5",
+        "odds": "-130"
+       },
+       "open": {
+        "line": "o6.5",
+        "odds": "+114"
+       }
+      },
+      "under": {
+       "close": {
+        "line": "u5.5",
+        "odds": "+110"
+       },
+       "open": {
+        "line": "u6.5",
+        "odds": "-135"
+       }
+      }
+     },
+     "header": {}
+    }
+   ],
+   "odds": []
+  },
+  "espn_football/nfl": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard?dates=20261116",
+   "date": "20261116",
+   "n": 1,
+   "completed": true,
+   "statusName": "STATUS_FINAL",
+   "scores": [
+    "home:Baltimore Ravens=20",
+    "away:Los Angeles Chargers=23"
+   ],
+   "oddsPresent": false
+  },
+  "espn_summary_football/nfl": {
+   "ok": true,
+   "url": "https://site.api.espn.com/apis/site/v2/sports/football/nfl/summary?event=401873065",
+   "pickcenter": [
+    {
+     "provider": {
+      "id": "100",
+      "name": "DraftKings"
+     },
+     "details": "BAL -3.5",
+     "overUnder": 39.5,
+     "spread": -3.5,
+     "moneyline": {
+      "displayName": "Moneyline",
+      "shortDisplayName": "ML",
+      "home": {
+       "close": {
+        "odds": "-218"
+       },
+       "open": {
+        "odds": "-142"
+       }
+      },
+      "away": {
+       "close": {
+        "odds": "+180"
+       },
+       "open": {
+        "odds": "+120"
+       }
+      }
+     },
+     "total": {
+      "displayName": "Total",
+      "shortDisplayName": "Total",
+      "over": {
+       "close": {
+        "line": "o39.5",
+        "odds": "-112"
+       },
+       "open": {
+        "line": "o48.5",
+        "odds": "-110"
+       }
+      },
+      "under": {
+       "close": {
+        "line": "u39.5",
+        "odds": "-108"
+       },
+       "open": {
+        "line": "u48.5",
+        "odds": "-110"
+       }
+      }
+     },
+     "header": {}
+    }
+   ],
+   "odds": []
+  }
+ }
+}
