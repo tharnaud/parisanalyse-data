@@ -1,6 +1,8 @@
 name: Backtest
 
 on:
+  schedule:
+    - cron: '41 4 * * 1' # chaque lundi : nouvelle mesure sur les 35 derniers jours
   workflow_dispatch:
     inputs:
       days:
