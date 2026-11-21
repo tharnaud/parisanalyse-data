@@ -8,14 +8,17 @@ const DAYS = Number(process.env.BT_DAYS) || 40;
 const OUT = 'data/backtest/extra';
 const H = { headers: { 'User-Agent': 'ParisAnalyse/1.0 (lecture seule)' } };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-async function getText(url, tries = 3) {
+async function getText(url, tries = 2) {
   for (let i = 0; i < tries; i++) {
+    const ctrl = new AbortController(), timer = setTimeout(() => ctrl.abort(), 20000); // 20 s au plus par requête
     try {
-      const r = await fetch(url, H);
-      if (r.ok) return await r.text();
+      const r = await fetch(url, Object.assign({ signal: ctrl.signal }, H));
+      const t = r.ok ? await r.text() : null;
+      clearTimeout(timer);
+      if (r.ok) return t;
       if (r.status === 404) return null;
-    } catch (e) { /* nouvel essai */ }
-    await sleep(2000 * (i + 1));
+    } catch (e) { clearTimeout(timer); }
+    await sleep(2000);
   }
   return null;
 }
@@ -33,15 +36,18 @@ for (const [lg, code] of Object.entries(FD)) {
     fs.writeFileSync(`${OUT}/${f}`, t);
     (index.fd[lg] = index.fd[lg] || []).push(f);
   }
+  console.log('football-data', lg, index.fd[lg] ? 'ok' : 'absent');
   await sleep(500);
 }
 // ClubElo : une note par club et par jour (pays des championnats suivis seulement).
 const KEEP = new Set(['ENG', 'ESP', 'ITA', 'GER', 'FRA', 'POR', 'NED']);
 const elo = {};
-for (let t = Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), from.getUTCDate()); t <= now.getTime(); t += 86400e3) {
+let fails = 0;
+for (let t = Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), from.getUTCDate()); t <= now.getTime() && fails < 3; t += 86400e3) {
   const day = new Date(t).toISOString().slice(0, 10);
   const csv = await getText(`http://api.clubelo.com/${day}`);
-  if (!csv) continue;
+  if (!csv) { fails++; console.log('ClubElo', day, 'sans réponse'); continue; }
+  fails = 0;
   const rows = {};
   csv.split(/\r?\n/).slice(1).forEach((l) => { const c = l.split(','); if (c.length >= 5 && KEEP.has(c[2]) && Number(c[4]) > 0) rows[c[1]] = Math.round(Number(c[4])); });
   if (Object.keys(rows).length) { elo[day] = rows; index.clubelo.push(day); }
