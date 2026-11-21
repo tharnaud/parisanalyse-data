@@ -1,81 +1,72 @@
 [
  {
-  "slug": "epl-ast-sun-2026-11-21",
+  "slug": "epl-new-ars-2026-11-21",
   "types": [
    "moneyline"
   ],
   "ml": [
    [
-    "Will Aston Villa FC win on 2026-11-21?",
-    "Aston Villa FC",
+    "Will Newcastle United FC win on 2026-11-21?",
+    "Newcastle United FC",
     "[\"Yes\", \"No\"]",
-    "[\"0.545\", \"0.455\"]"
+    "[\"0.145\", \"0.855\"]"
    ],
    [
-    "Will Aston Villa FC vs. Sunderland AFC end in a draw?",
-    "Draw (Aston Villa FC vs. Sunderland AFC)",
+    "Will Newcastle United FC vs. Arsenal FC end in a draw?",
+    "Draw (Newcastle United FC vs. Arsenal FC)",
     "[\"Yes\", \"No\"]",
-    "[\"0.255\", \"0.745\"]"
+    "[\"0.225\", \"0.775\"]"
    ],
    [
-    "Will Sunderland AFC win on 2026-11-21?",
-    "Sunderland AFC",
+    "Will Arsenal FC win on 2026-11-21?",
+    "Arsenal FC",
     "[\"Yes\", \"No\"]",
-    "[\"0.205\", \"0.795\"]"
+    "[\"0.625\", \"0.375\"]"
    ]
   ]
  },
  {
-  "slug": "epl-ast-sun-2026-11-21-halftime-result",
+  "slug": "epl-new-ars-2026-11-21-halftime-result",
   "types": [
    "soccer_halftime_result"
   ],
   "ml": []
  },
  {
-  "slug": "epl-ast-sun-2026-11-21-exact-score",
+  "slug": "epl-new-ars-2026-11-21-exact-score",
   "types": [
    "soccer_exact_score"
   ],
   "ml": []
  },
  {
-  "slug": "epl-ast-sun-2026-11-21-first-to-score",
+  "slug": "epl-new-ars-2026-11-21-first-to-score",
   "types": [
    "soccer_first_to_score"
   ],
   "ml": []
  },
  {
-  "slug": "epl-cov-cry-2026-11-21",
+  "slug": "epl-new-ars-2026-11-21-total-corners",
   "types": [
-   "moneyline"
+   "total_corners",
+   "soccer_first_half_total_corners",
+   "soccer_team_total_corners"
   ],
-  "ml": [
-   [
-    "Will Coventry City FC win on 2026-11-21?",
-    "Coventry City FC",
-    "[\"Yes\", \"No\"]",
-    "[\"0.375\", \"0.625\"]"
-   ],
-   [
-    "Will Coventry City FC vs. Crystal Palace FC end in a draw?",
-    "Draw (Coventry City FC vs. Crystal Palace FC)",
-    "[\"Yes\", \"No\"]",
-    "[\"0.285\", \"0.715\"]"
-   ],
-   [
-    "Will Crystal Palace FC win on 2026-11-21?",
-    "Crystal Palace FC",
-    "[\"Yes\", \"No\"]",
-    "[\"0.345\", \"0.655\"]"
-   ]
-  ]
+  "ml": []
  },
  {
-  "slug": "epl-cov-cry-2026-11-21-halftime-result",
+  "slug": "epl-new-ars-2026-11-21-more-markets",
   "types": [
-   "soccer_halftime_result"
+   "spreads",
+   "totals",
+   "both_teams_to_score",
+   "both_teams_to_score_first_half",
+   "first_half_totals",
+   "soccer_team_totals",
+   "soccer_first_half_team_totals",
+   "second_half_totals",
+   "first_half_spreads"
   ],
   "ml": []
  }
