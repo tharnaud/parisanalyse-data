@@ -1,0 +1,71 @@
+[
+ {
+  "slug": "epl-not-che-2026-11-27",
+  "types": [
+   "moneyline"
+  ],
+  "ml": [
+   [
+    "Will Nottingham Forest FC win on 2026-11-27?",
+    "Nottingham Forest FC",
+    "[\"Yes\", \"No\"]",
+    "[\"0.375\", \"0.625\"]"
+   ],
+   [
+    "Will Nottingham Forest FC vs. Chelsea FC end in a draw?",
+    "Draw (Nottingham Forest FC vs. Chelsea FC)",
+    "[\"Yes\", \"No\"]",
+    "[\"0.285\", \"0.715\"]"
+   ],
+   [
+    "Will Chelsea FC win on 2026-11-27?",
+    "Chelsea FC",
+    "[\"Yes\", \"No\"]",
+    "[\"0.345\", \"0.655\"]"
+   ]
+  ]
+ },
+ {
+  "slug": "epl-not-che-2026-11-27-more-markets",
+  "types": [
+   "spreads",
+   "totals",
+   "both_teams_to_score",
+   "both_teams_to_score_first_half",
+   "first_half_totals",
+   "soccer_team_totals",
+   "soccer_first_half_team_totals",
+   "second_half_totals",
+   "first_half_spreads"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-not-che-2026-11-27-total-corners",
+  "types": [
+   "total_corners"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-not-che-2026-11-27-halftime-result",
+  "types": [
+   "soccer_halftime_result"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-not-che-2026-11-27-exact-score",
+  "types": [
+   "soccer_exact_score"
+  ],
+  "ml": []
+ },
+ {
+  "slug": "epl-not-che-2026-11-27-first-to-score",
+  "types": [
+   "soccer_first_to_score"
+  ],
+  "ml": []
+ }
+]

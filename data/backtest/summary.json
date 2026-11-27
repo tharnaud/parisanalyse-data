@@ -1,0 +1,94 @@
+{
+ "generatedAt": "2026-11-23T15:31:52.957Z",
+ "from": "2026-10-19T10:21:48.894Z",
+ "to": "2026-11-23T10:21:48.894Z",
+ "days": 35,
+ "leagues": {
+  "eng.1": {
+   "espn": 40,
+   "espnWithDK": 40,
+   "pm": 40,
+   "kalshi": 40,
+   "seconds": 11
+  },
+  "esp.1": {
+   "espn": 41,
+   "espnWithDK": 41,
+   "pm": 41,
+   "kalshi": 41,
+   "seconds": 11
+  },
+  "ita.1": {
+   "espn": 51,
+   "espnWithDK": 51,
+   "pm": 51,
+   "kalshi": 51,
+   "seconds": 13
+  },
+  "ger.1": {
+   "espn": 36,
+   "espnWithDK": 32,
+   "pm": 36,
+   "kalshi": 36,
+   "seconds": 10
+  },
+  "fra.1": {
+   "espn": 36,
+   "espnWithDK": 36,
+   "pm": 36,
+   "kalshi": 36,
+   "seconds": 10
+  },
+  "uefa.champions": {
+   "espn": 36,
+   "espnWithDK": 36,
+   "pm": 36,
+   "kalshi": 36,
+   "seconds": 10
+  },
+  "uefa.europa": {
+   "espn": 36,
+   "espnWithDK": 36,
+   "pm": 36,
+   "kalshi": 37,
+   "seconds": 10
+  },
+  "nba": {
+   "espn": 248,
+   "espnWithDK": 248,
+   "pm": 242,
+   "kalshi": 248,
+   "seconds": 257
+  },
+  "nhl": {
+   "espn": 241,
+   "espnWithDK": 241,
+   "pm": 241,
+   "kalshi": 241,
+   "seconds": 200
+  },
+  "nfl": {
+   "espn": 70,
+   "espnWithDK": 70,
+   "pm": 67,
+   "kalshi": 70,
+   "seconds": 73
+  }
+ },
+ "requests": {
+  "gamma": 42,
+  "espn": 1215,
+  "kalshi": 1710,
+  "clob": 9385
+ },
+ "errors": {},
+ "espn": {
+  "summaries": 835,
+  "sansReponse": 0,
+  "sansPickcenter": 4,
+  "fournisseurs": {
+   "DraftKings": 831
+  }
+ },
+ "seconds": 604
+}
